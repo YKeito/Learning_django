@@ -52,6 +52,19 @@ TIME_ZONE = 'Asia/Tokyo'
 $ cd myproj
 $ python manage.py runserver
 ```
-ブラウザで「http://127.0.0.1:8000/」と入れ、インストール成功の画面が表示されるか確認。
-
-
+ブラウザで「 http://127.0.0.1:8000/ 」と入れ、インストール成功の画面が表示されるか確認。
+# アプリケーション作成
+```
+python manage.py startapp books
+```
+下記のファイルが作成される。
+```
+./books/__init__.py
+./books/admin.py
+./books/apps.py
+./books/models.py
+./books/tests.py
+./books/views.py
+./books/migrations/__init__.py
+```
+![alt](https://drive.google.com/file/d/1E6OoBg7nxsfejg5S17hDejDAFHAoZ3SJ/view?usp=sharing)
