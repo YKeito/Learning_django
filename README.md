@@ -67,4 +67,3 @@ python manage.py startapp books
 ./books/views.py
 ./books/migrations/__init__.py
 ```
-![alt](https://drive.google.com/file/d/1E6OoBg7nxsfejg5S17hDejDAFHAoZ3SJ/view?usp=sharing)
