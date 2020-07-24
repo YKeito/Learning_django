@@ -24,7 +24,7 @@ Django          2.2.9
 ```
 $ cd ~/Documents/myproj
 ```
-+ プロジェクトの作成
++ 実行するとプロジェクトに必要な雛形ファイルを作成configは任意の名前。
 ```
 $ django-admin startproject config
 $ mv ./config ./myproj
@@ -42,9 +42,16 @@ $ cd ./myproj
 ```
 # プロジェクトの設定ファイル
 + 言語設定とタイムゾーン設定
-以下に変更
+./config/setting.pyを開き、以下の内容に変更。
 ```
 LANGUAGE_CODE = 'ja-JP'
 TIME_ZONE = 'Asia/Tokyo'
 ```
-# 
+# 開発サーバーの起動
+```
+$ cd myproj
+$ python manage.py runserver
+```
+ブラウザで「http://127.0.0.1:8000/」と入れ、インストール成功の画面が表示されるか確認。
+
+
