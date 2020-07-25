@@ -1,7 +1,7 @@
 # Djangoの勉強録
 + 参考サイト
 > [Django入門](http://www.tohoho-web.com/ex/django.html)
-# http://127.,0.0.1:8000/books/ にアクセスしてHello world!を表示させる
+# http://127.0.0.1:8000/books/ にアクセスしてHello world!を表示させる
 + ./config/settings.py編集 : Books.appsを定義
 ./books/apps.py に定義されたクラス名をアプリケーションとして ./config/settings.py の INSTALLED_APPS に登録。
 ```
