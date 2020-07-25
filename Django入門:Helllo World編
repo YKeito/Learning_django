@@ -1,4 +1,44 @@
 # Djangoの勉強録
 + 参考サイト
 > [Django入門](http://www.tohoho-web.com/ex/django.html)
-# Djangoのインストール
+# http://127.,0.0.1:8000/books/ にアクセスしてHello world!を表示させる
++ Books.appsを定義
+./books/apps.py に定義されたクラス名をアプリケーションとして ./config/settings.py の INSTALLED_APPS に登録します。
+```
+INSTALLED_APPS = [
+    ** 'books.apps.BooksConfig', **
+    'django.contrib.admin',
+    'django.contrib.auth',
+    .
+    .
+```
++ http://127.,0.0.1:8000/以降のurls表示を定義
+./config/urls.py に、http://127.,0.0.1:8000/books/ が要求されたら、./books/urls.py を参照するように指定します。
+```
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('books/', include('books.urls')),
+]
+```
++  
+./books/urls.py ファイルを新規に作成し、http://サーバアドレス/books/ の次に何もなければ、view.py の list_books 関数を呼び出すように指定します。
+```
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.list_books, name='list_books'),
+]
+```
+
+./books/views.py ビューを下記の様に修正します。
+```
+from django.http import HttpResponse
+
+def list_books(request):
+    return HttpResponse("Hello world!")
+```
+ブラウザで http://サーバアドレス/books/ にアクセスして Hello world! が表示されれば成功です。
