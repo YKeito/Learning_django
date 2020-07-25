@@ -28,7 +28,7 @@ urlpatterns = [
 `include('books.urls')`は./books/urls.pyを参照するという意味
 +  ./books/urls.py編集 : http://127.,0.0.1:8000/... の表示を定義
 
-./books/urls.py ファイルを新規に作成し、http://127.,0.0.1:8000/books/ の次に何もなければ、view.py の list_books 関数を呼び出すように指定。
+./books/urls.py ファイルを新規作成し、http://127.,0.0.1:8000/books/ の次に何もなければ、view.py の list_books 関数を呼び出すように指定。
 ```
 from django.urls import path
 from . import views
