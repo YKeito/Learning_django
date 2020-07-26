@@ -1,6 +1,7 @@
 # Djangoの勉強録
 + 参考サイト
 > [Django入門](http://www.tohoho-web.com/ex/django.html)
+> [templateを設定するためのview参考サイト](https://docs.djangoproject.com/ja/3.0/intro/tutorial03/)
 # テンプレートを使用する
 + Book の一覧をテーブル表示
 
@@ -75,12 +76,13 @@ def list_books(request):
     template = loader.get_template('books/list_books.html')
     return HttpResponse(template.render(context, request))
 ```
+これが何をやっているかわからなかったため、以下を参照
+
 booksはmodelsをロード。
 contextは、ロードしたmodelsをディクショナリとすることでPython オブジェクトにマッピング(?)
-`render()`は、第1引数として `request オブジェクト`を、第2引数として`テンプレート名`を、第3引数（任意）としてディクショナリを受け取る。
-この関数はテンプレートを指定のコンテキストでレンダリングし、その HttpResponse オブジェクトを返します。
-また、別の書き方
 > [templateを設定するためのview参考サイト](https://docs.djangoproject.com/ja/3.0/intro/tutorial03/)
+>> `render()`は、第1引数として `request オブジェクト`を、第2引数として`テンプレート名`を、第3引数（任意）としてディクショナリを受け取る。この関数はテンプレートを指定のコンテキストでレンダリングし、その HttpResponse オブジェクトを返します。
+また、別の書き方
 >> テンプレートをロードしてコンテキストに値を入れ、テンプレートをレンダリングした結果を HttpResponse オブジェクトで返す、というイディオムは非常によく使われます。 Django はこのためのショートカットを提供します。これを使って index() ビューを書き換えてみましょう:
 ```
 from django.shortcuts import render
