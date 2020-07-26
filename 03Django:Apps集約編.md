@@ -33,4 +33,4 @@ $ mv ./books ./apps
 ```
 python manage.py runserver
 ```
-ブラウザで http://127.,0.0.1:8000/books/ にアクセスして Hello world! が表示されれば成功。
+ブラウザで http://127.0.0.1:8000/books/ にアクセスして Hello world! が表示されれば成功。
