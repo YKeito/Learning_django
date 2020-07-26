@@ -5,7 +5,10 @@
 > [classのお勉強](https://techacademy.jp/magazine/20615)
 > [class defの解説](https://techacademy.jp/magazine/15637)
 # 本(Book)を管理するモデル作成
-+ 本(Book)は、管理番号(book_id)、タイトル(title)、著者(author)の属性を持つものと定義。
++ モデル属性の定義。
+
+本(Book)は、管理番号(book_id)、タイトル(title)、著者(author)の属性を持つものと定義。
+./apps/books/models.pyを編集。
 ```
 from django.db import models
 class Book(models.Model):
