@@ -57,9 +57,9 @@ mkdir ./templates/books
   </tbody>
 </table>
 ```
-+ 
++ viewファイルの修正
 
-./apps/books/views.py ファイルを下記の様に修正。
+./templates/books/list_books.htmlを使用するために、./apps/books/views.py ファイルを下記の様に修正。
 
 ```
 from django.http import HttpResponse
@@ -75,8 +75,25 @@ def list_books(request):
     template = loader.get_template('books/list_books.html')
     return HttpResponse(template.render(context, request))
 ```
-
-
+booksはmodelsをロード。
+contextは、ロードしたmodelsをディクショナリとすることでPython オブジェクトにマッピング(?)
+`render()`は、第1引数として `request オブジェクト`を、第2引数として`テンプレート名`を、第3引数（任意）としてディクショナリを受け取る。
+この関数はテンプレートを指定のコンテキストでレンダリングし、その HttpResponse オブジェクトを返します。
+また、別の書き方
+> [templateを設定するためのview参考サイト](https://docs.djangoproject.com/ja/3.0/intro/tutorial03/)
+>> テンプレートをロードしてコンテキストに値を入れ、テンプレートをレンダリングした結果を HttpResponse オブジェクトで返す、というイディオムは非常によく使われます。 Django はこのためのショートカットを提供します。これを使って index() ビューを書き換えてみましょう:
+```
+from django.shortcuts import render
+from .models import Book
+# Create your views here.
+def list_books(request):
+    books = Book.objects.all()
+    context = {
+        'title': 'List Books',
+        'books': books,
+    }
+    return render(request, 'books/list_books.html', context)
+```
 + 開発サーバーの起動
 ```
 python manage.py runserver
