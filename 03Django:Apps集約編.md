@@ -4,13 +4,16 @@
 > [osモジュール](https://qiita.com/No_217/items/fb605d55c3db564727a1)
 > [os path joinとは](https://www.sejuku.net/blog/64408)
 # アプリケーションディレクトリの集約
-+ Django の標準では BASE_DIR(./) 直下にAppsディレクトリが乱雑に並んでしまう。
++ ディレクトリの整理
+
+Django の標準では BASE_DIR(./) 直下にAppsディレクトリが乱雑に並んでしまう。
 今回はbooksだけだが、A, B, c ..と複数のAppsを作成したとき邪魔くさい。そこで、Appsを集約して格納するための ./apps ディレクトリを用意。
 ```
 $ mkdir ./apps
 ```
 + ./appsに集約したAppsを使えるようにする
-./apps ディレクトリを ./config/settings.py に登録
+
+./apps ディレクトリを ./config/settings.py に登録。
 ```
 import os
 import sys
@@ -27,7 +30,6 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 $ mv ./books ./apps
 ```
 + 開発サーバーの起動
-
 ```
 python manage.py runserver
 ```
