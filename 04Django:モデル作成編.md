@@ -1,8 +1,11 @@
 # Djangoの勉強録
 + 参考サイト
 > [Django入門](http://www.tohoho-web.com/ex/django.html)
+
 > [returnの解説](https://techacademy.jp/magazine/18886)
+
 > [classのお勉強](https://techacademy.jp/magazine/20615)
+
 > [class defの解説](https://techacademy.jp/magazine/15637)
 # 本(Book)を管理するモデル作成
 + モデル属性の定義。
